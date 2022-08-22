@@ -71,7 +71,12 @@ function Display({ initialValue }) {
 
       {Object.keys(options).map(function (key, index) {
         return (
-          <Button key={key} label={key} icon={options[key].result} onClick={clickHandler(options[key])} />
+          <Button
+            key={key}
+            label={key}
+            icon={options[key].result}
+            onClick={clickHandler(options[key])}
+          />
         );
       })}
     </Container>

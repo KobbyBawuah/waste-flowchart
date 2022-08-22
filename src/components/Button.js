@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { PRIMARY_BUTTON_PURPLE, WHITE } from "../theme/colors";
-import ResultIcon  from "./ResultIcon";
+import ResultIcon from "./ResultIcon";
 
 class Button extends React.Component {
   constructor(props) {
@@ -31,6 +31,12 @@ class Button extends React.Component {
 }
 
 const StyledButton = styled(`button`)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
   margin: 12px;
   width: 20rem;
   height: 10rem;
