@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { WHITE } from "../theme/colors";
+import { PRIMARY_BUTTON_PURPLE, WHITE } from "../theme/colors";
 
 class Button extends React.Component {
   constructor(props) {
@@ -35,8 +35,9 @@ const StyledButton = styled(`button`)`
   color: ${WHITE};
   font-size: xx-large;
   font-family: Rubik, Avenir Next, Helvetica Neue, sans-serif;
+  font-weight: 600;
 
-  background-color: #241d2a;
+  background-color: ${PRIMARY_BUTTON_PURPLE};
 
   border-radius: 4px;
   border: 1px solid #43384c;
