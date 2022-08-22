@@ -136,6 +136,65 @@
           }
         }
       }
+    },
+    "Happy-Hour": {
+      "options": {
+        "Pizza": {
+          "options": {
+            "box": {
+              "result": "organic"
+            },
+            "napkin": {
+              "result": "organic"
+            }
+          }
+        },
+        "Nachos": {
+          "options": {
+            "box": {
+              "result": "garbage"
+            },
+            "sauce containers": {
+              "result": "recycling"
+            },
+            "parchment paper": {
+              "result": "garbage"
+            },
+            "napkin": {
+              "result": "organic"
+            }
+          }
+        },
+        "Fried chicken": {
+          "options": {
+            "Box": {
+              "result": "organic"
+            },
+            "Napkin": {
+              "result": "organic"
+            },
+            "sauce containers": {
+              "result": "recycling"
+            }
+          }
+        },
+        "Poutine": {
+          "options": {
+            "Black plastic": {
+              "result": "garbage"
+            },
+            "Lid": {
+              "result": "recycling"
+            },
+            "sauce containers": {
+              "result": "recycling"
+            },
+            "napkin": {
+              "result": "organic"
+            }
+          }
+        }
+      }
     }
   }
 }
