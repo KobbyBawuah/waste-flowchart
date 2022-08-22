@@ -1,32 +1,30 @@
 {
-  "snack-waste": {
-    "terminal": false,
-    "options": ["chip-bag", "aluminum-foil", "yogurt"],
-    "icon": "../img/file"
-  },
-  "chip-bag": {
-    "terminal": true,
-    "result": "recycling",
-    "icon": "../img/file"
-  },
-  "aluminum-foil": {
-    "terminal": true,
-    "result": "garbage",
-    "icon": "../img/file"
-  },
-  "yogurt": {
-    "terminal": false,
-    "options": ["yogurt-lid", "yogurt-container"],
-    "icon": "../img/file"
-  },
-  "yogurt-lid": {
-    "terminal": true,
-    "result": "garbage",
-    "icon": "../img/file"
-  },
-  "yogurt-container": {
-    "terminal": true,
-    "result": "recycling",
-    "icon": "../img/file"
+  "options": {
+    "snack-waste": {
+      "options": {
+        "chip-bag": {
+          "result": "recycling",
+          "icon": "../img/file"
+        },
+        "aluminum-foil": {
+          "result": "garbage",
+          "icon": "../img/file"
+        },
+        "yogurt": {
+          "options": {
+            "yogurt-lid": {
+              "result": "garbage",
+              "icon": "../img/file"
+            },
+            "yogurt-container": {
+              "result": "recycling",
+              "icon": "../img/file"
+            }
+          },
+          "icon": "../img/file"
+        }
+      },
+      "icon": "../img/file"
+    }  
   }
 }

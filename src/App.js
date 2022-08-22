@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Header>What kind of waste are you confused about?</Header>
-      <Display initialValue={["snack-waste"]} data={WASTE_MAP} />
+      <Display initialValue={WASTE_MAP} />
     </div>
   );
 }
