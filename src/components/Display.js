@@ -41,8 +41,7 @@ function Display({initialValue}) {
     //   garbage: "../img/garbage",
     // };
 
-    const terminalElement = state.previous[state.previous.length - 1];
-    return this.data[terminalElement]["result"];
+    return state.current["result"];
 
     // The goal
     // const result = this.data[terminalElement]["result"];
