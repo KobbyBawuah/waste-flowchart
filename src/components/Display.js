@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "./Button";
 
+import styled from "@emotion/styled";
+
 class Display extends React.Component {
   constructor(props) {
     // Required step: always call the parent class' constructor
@@ -78,7 +80,7 @@ class Display extends React.Component {
     const terminalElement = this.state.previous[this.state.previous.length - 1];
     return this.data[terminalElement]["result"];
 
-    // The goal 
+    // The goal
     // const result = this.data[terminalElement]["result"];
     // return TERMINAL_IMAGE_FILES[result];
   }
@@ -93,18 +95,20 @@ class Display extends React.Component {
     if (this.state.terminal) {
       // pick icon;
       return (
-        <div>
+        <Container>
           <h1>WE DONEZO</h1>
           {console.log(pickIcon())}
           <button onClick={resetHandler}>Reset</button>
-        </div>
+        </Container>
       );
     } else {
       return [
-        <div className="button-display-container" key={101010}>
+        <Container className="button-display-container" key={101010}>
           {this.state.previous.length > 0 ? (
             // true
-            <button onClick={backButtonHandler}>Go back</button>
+            <BackContainer>
+              <button onClick={backButtonHandler}>Go back</button>
+            </BackContainer>
           ) : //false
           null}
 
@@ -117,10 +121,23 @@ class Display extends React.Component {
               />
             );
           })}
-        </div>,
+        </Container>,
       ];
     }
   }
 }
+
+const Container = styled("div")`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 12px;
+`;
+
+const BackContainer = styled("div")`
+  margin: 12px;
+  width: 100%;
+`;
 
 export default Display;
