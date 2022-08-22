@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 import Button from "./Button";
 
 import styled from "@emotion/styled";
+import { WHITE } from "../theme/colors";
 
 function Display({ initialValue }) {
   const [state, setState] = useState({
@@ -63,8 +65,9 @@ function Display({ initialValue }) {
     <Container className="button-display-container">
       {state.previous.length > 0 ? (
         // true
-        <BackContainer>
-          <button onClick={backButtonHandler}>Go back</button>
+        <BackContainer onClick={backButtonHandler}>
+          <FaArrowAltCircleLeft size={24} />
+          Back
         </BackContainer>
       ) : //false
       null}
@@ -92,8 +95,20 @@ const Container = styled("div")`
 `;
 
 const BackContainer = styled("div")`
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  position: fixed;
+  top: 16px;
+  left: 12px;
+  border: 1px solid ${WHITE};
+  width: min-content;
+
   margin: 12px;
-  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  color: ${WHITE};
 `;
 
 export default Display;

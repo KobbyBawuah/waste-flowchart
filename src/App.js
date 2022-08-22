@@ -8,10 +8,10 @@ import styled from "@emotion/styled";
 
 function App() {
   return (
-    <div>
+    <>
       <Header>What kind of waste are you confused about?</Header>
       <Display initialValue={WASTE_MAP} />
-    </div>
+    </>
   );
 }
 
