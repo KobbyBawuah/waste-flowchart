@@ -1,20 +1,4 @@
-// import React, { Component } from 'react'
-
-// const Button = (props) =>{
-//     console.log(props.label);
-//     // figure out how to pass label
-//     return(
-//         <button onClick = {props.onClick}>
-//             {props.label}
-//         </button>
-//     );
-// };
-
-// export default Button;
-
-import React, { Component } from "react";
-
-import FLOW_DATA from "../App";
+import React from "react";
 
 class Button extends React.Component {
   constructor(props) {
@@ -35,11 +19,7 @@ class Button extends React.Component {
 
   render() {
     let clickHandler = this.clickHandler;
-    return(
-        <button onClick = {clickHandler}>
-            {this.state.label}
-        </button>
-    );
+    return <button onClick={clickHandler}>{this.state.label}</button>;
   }
 }
 

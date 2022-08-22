@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Button from "./Button";
 
 class Display extends React.Component {
@@ -17,6 +17,7 @@ class Display extends React.Component {
     this.clickHandler = this.clickHandler.bind(this);
     this.resetHandler = this.resetHandler.bind(this);
     this.backButtonHandler = this.backButtonHandler.bind(this);
+    this.pickIcon = this.pickIcon.bind(this);
     this.data = this.props.data;
   }
 
@@ -27,20 +28,18 @@ class Display extends React.Component {
 
   backButtonHandler() {
     // check parent, check parent of parent
-    console.log("--------------");
+
     let currentPrevious = this.state.previous;
     let newCurrent = [];
 
     if (currentPrevious.length >= 2) {
-      console.log(currentPrevious[currentPrevious.length - 2]);
       newCurrent =
         this.data[currentPrevious[currentPrevious.length - 2]]["options"];
       currentPrevious.pop();
       this.setState({ previous: currentPrevious, current: newCurrent });
-    } else if (currentPrevious.length == 1) {
+    } else if (currentPrevious.length === 1) {
+      // 1 level left
       this.resetHandler();
-      // newCurrent = this.data[currentPrevious[0]];
-      // currentPrevious = [];
     }
     console.log(currentPrevious);
     console.log(newCurrent);
@@ -53,16 +52,16 @@ class Display extends React.Component {
       console.log("terminal");
 
       // change to terminal state
-      this.setState({ terminal: true });
+      console.log(this.state.previous);
+      this.setState({
+        terminal: true,
+        previous: this.state.previous.concat(label),
+        current: [],
+      });
     } else {
       // not terminal
       console.log("not terminal");
 
-      // get options
-      // console.log("options:");
-      // console.log(nextSteps["options"]);
-
-      // this below re-renders the screen
       this.setState({
         previous: this.state.previous.concat(label),
         current: nextSteps["options"],
@@ -70,30 +69,39 @@ class Display extends React.Component {
     }
   }
 
+  pickIcon() {
+    // const TERMINAL_IMAGE_FILES = {
+    //   recycling: "../img/recycling",
+    //   garbage: "../img/garbage",
+    // };
+
+    const terminalElement = this.state.previous[this.state.previous.length - 1];
+    return this.data[terminalElement]["result"];
+
+    // The goal 
+    // const result = this.data[terminalElement]["result"];
+    // return TERMINAL_IMAGE_FILES[result];
+  }
+
   render() {
     let clickHandler = this.clickHandler;
-
-    // only show back button if previous is not empty
-    // return  <Button label={this.state.current[0]} onClick={1}></Button>;
-
-    // whatever you like
-    // loop through current to make all buttons
     let resetHandler = this.resetHandler;
     let backButtonHandler = this.backButtonHandler;
+    let pickIcon = this.pickIcon;
 
     const elements = this.state.current;
     if (this.state.terminal) {
+      // pick icon;
       return (
         <div>
           <h1>WE DONEZO</h1>
+          {console.log(pickIcon())}
           <button onClick={resetHandler}>Reset</button>
         </div>
       );
-
-      // pick icon;
     } else {
       return [
-        <div className="playlist-items-container" key={101010}>
+        <div className="button-display-container" key={101010}>
           {this.state.previous.length > 0 ? (
             // true
             <button onClick={backButtonHandler}>Go back</button>

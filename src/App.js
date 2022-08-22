@@ -1,18 +1,8 @@
 import "./App.css";
-import React, { useState } from 'react'
-import Button from "./componets/Button";
+import React from "react";
 import Display from "./componets/Display";
 
-//possible to creat object for terminal states
-
-//Sample-->
-
-// TERMINAL_IMAGE_FILES = {
-//   "recycling": "../img/recycling",
-//   "garbage": "../img/garbage"
-// }
-
-const FLOW_DATA = {
+const TEST_FLOW_DATA = {
   "snack-waste": {
     terminal: false,
     options: ["chip-bag", "aluminum-foil", "yogurt"],
@@ -45,13 +35,11 @@ const FLOW_DATA = {
   },
 };
 
-const breadcrumbs = ["snack-waste"]
-
 function App() {
   return (
     <div>
       <h1>What kind of waste are you confused about?</h1>
-      <Display initialValue={['snack-waste']} data={FLOW_DATA}/>
+      <Display initialValue={["snack-waste"]} data={TEST_FLOW_DATA} />
     </div>
   );
 }
