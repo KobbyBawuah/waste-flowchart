@@ -1,5 +1,5 @@
 import React from "react";
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import { WHITE } from "../theme/colors";
 
 class Button extends React.Component {
@@ -21,7 +21,9 @@ class Button extends React.Component {
 
   render() {
     let clickHandler = this.clickHandler;
-    return <StyledButton onClick={clickHandler}>{this.state.label}</StyledButton>;
+    return (
+      <StyledButton onClick={clickHandler}>{this.state.label}</StyledButton>
+    );
   }
 }
 
@@ -32,12 +34,12 @@ const StyledButton = styled(`button`)`
 
   color: ${WHITE};
   font-size: xx-large;
-  font-family: Rubik,Avenir Next,Helvetica Neue,sans-serif;
+  font-family: Rubik, Avenir Next, Helvetica Neue, sans-serif;
 
   background-color: #241d2a;
 
   border-radius: 4px;
   border: 1px solid #43384c;
-`
+`;
 
 export default Button;

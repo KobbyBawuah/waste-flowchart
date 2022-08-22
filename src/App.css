@@ -37,9 +37,11 @@
   }
 }
 
-html,
+html {
+  overflow: hidden;
+}
+
 body {
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }

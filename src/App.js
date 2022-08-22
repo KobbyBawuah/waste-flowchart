@@ -1,11 +1,10 @@
 import "./App.css";
 import React from "react";
 import Display from "./components/Display";
-import WASTE_MAP from './wasteMap.json';
-import {WHITE} from './theme/colors';
+import WASTE_MAP from "./wasteMap.json";
+import { WHITE } from "./theme/colors";
 
 import styled from "@emotion/styled";
-
 
 function App() {
   return (
@@ -16,10 +15,12 @@ function App() {
   );
 }
 
-const Header = styled('h1')`
+const Header = styled("h1")`
   color: ${WHITE};
-  font-family: Rubik,Avenir Next,Helvetica Neue,sans-serif;
+  font-family: Rubik, Avenir Next, Helvetica Neue, sans-serif;
   font-weight: 600;
-`
+  display: flex;
+  justify-content: center;
+`;
 
 export default App;
