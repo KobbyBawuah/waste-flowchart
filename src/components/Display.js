@@ -56,7 +56,7 @@ function Display({initialValue}) {
     return (
       <Container>
         <h1>WE DONEZO</h1>
-        {{console.log(pickIcon())}}
+        {console.log(pickIcon())}
         <button onClick={resetHandler}>Reset</button>
       </Container>
     );
