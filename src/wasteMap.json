@@ -2,13 +2,18 @@
   "options": {
     "snack-waste": {
       "options": {
-        "chip-bag": {
-          "result": "recycling",
-          "icon": "../img/file"
+        "snack/candy wrapper": {
+          "result": "garbage"
         },
-        "aluminum-foil": {
+        "chip bag": {
           "result": "garbage",
           "icon": "../img/file"
+        },
+        "fruit waste": {
+          "result": "organic"
+        },
+        "cheese": {
+          "result": "garbage"
         },
         "yogurt": {
           "options": {
@@ -22,9 +27,115 @@
             }
           },
           "icon": "../img/file"
+        },
+        "hummus": {
+          "options": {
+            "hummus box": {
+              "result": "recycling"
+            },
+            "hummus container": {
+              "result": "recycling"
+            },
+            "plastic wrappers": {
+              "result": "garbage"
+            }
+          },
+          "icon": "../img/file"
         }
       },
       "icon": "../img/file"
-    }  
+    },
+    "lunch": {
+      "options": {
+        "Banh Mi": {
+          "options": {
+            "Paper bag/napkin": {
+              "result": "organic"
+            },
+            "Parchment paper": {
+              "result": "organic"
+            },
+            "Wax paper": {
+              "result": "garbage"
+            }
+          }
+        },
+        "Poke": {
+          "options": {
+            "Container/napkins": {
+              "result": "organic"
+            },
+            "Lid": {
+              "result": "recycling"
+            },
+            "Wooden chopsticks": {
+              "result": "garbage"
+            }
+          }
+        },
+        "Rice Bowls": {
+          "options": {
+            "Black bowl": {
+              "result": "garbage"
+            },
+            "Wooden chopsticks": {
+              "result": "garbage"
+            },
+            "Cardboard bowl": {
+              "result": "garbage"
+            },
+            "Lid": {
+              "result": "recycling"
+            }
+          }
+        },
+        "Roti": {
+          "options": {
+            "Black plastic": {
+              "result": "garbage"
+            },
+            "Foil": {
+              "result": "recycling"
+            },
+            "Plastic lid": {
+              "result": "recycling"
+            }
+          }
+        },
+        "Salad": {
+          "options": {
+            "Plastic lid": {
+              "result": "garbage"
+            },
+            "Dressing cup": {
+              "result": "recycling"
+            },
+            "Cardboard bowl": {
+              "result": "recycling"
+            }
+          }
+        },
+        "Tacos": {
+          "options": {
+            "Cardboard clamshell and napkins": {
+              "result": "organic"
+            },
+            "Hot sauce container": {
+              "result": "recycling"
+            }
+          }
+        },
+        "Thai": {
+          "options": {
+            "Black plastic": {
+              "result": "garbage"
+            },
+            "Lid": {
+              "result": "recycling"
+            }
+          }
+        }
+      }
+    }
   }
 }
