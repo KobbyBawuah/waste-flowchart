@@ -1,10 +1,9 @@
-import {useState} from 'react';
+import { useState } from "react";
 import Button from "./Button";
 
 import styled from "@emotion/styled";
 
-
-function Display({initialValue}) {
+function Display({ initialValue }) {
   const [state, setState] = useState({
     previous: [],
     current: initialValue,
@@ -24,8 +23,8 @@ function Display({initialValue}) {
     let newCurrent = state.previous.pop();
     setState({
       previous: state.previous,
-      current: newCurrent
-    })
+      current: newCurrent,
+    });
   }
 
   const clickHandler = (option) => (label) => {
@@ -33,7 +32,7 @@ function Display({initialValue}) {
       previous: [...state.previous, state.current],
       current: option,
     });
-  }
+  };
 
   function pickIcon() {
     // const TERMINAL_IMAGE_FILES = {
@@ -48,8 +47,7 @@ function Display({initialValue}) {
     // return TERMINAL_IMAGE_FILES[result];
   }
 
-
-  const {result, options} = state.current;
+  const { result, options } = state.current;
   if (result) {
     // pick icon;
     return (
@@ -59,7 +57,7 @@ function Display({initialValue}) {
         <button onClick={resetHandler}>Reset</button>
       </Container>
     );
-  } 
+  }
 
   return (
     <Container className="button-display-container">
@@ -73,11 +71,7 @@ function Display({initialValue}) {
 
       {Object.keys(options).map(function (key, index) {
         return (
-          <Button
-            label={key}
-            key={key}
-            onClick={clickHandler(options[key])}
-          />
+          <Button key={key} label={key} icon={options[key].result} onClick={clickHandler(options[key])} />
         );
       })}
     </Container>

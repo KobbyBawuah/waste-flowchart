@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { PRIMARY_BUTTON_PURPLE, WHITE } from "../theme/colors";
+import ResultIcon  from "./ResultIcon";
 
 class Button extends React.Component {
   constructor(props) {
@@ -22,7 +23,9 @@ class Button extends React.Component {
   render() {
     let clickHandler = this.clickHandler;
     return (
-      <StyledButton onClick={clickHandler}>{this.state.label}</StyledButton>
+      <StyledButton onClick={clickHandler}>
+        {this.state.label} <ResultIcon icon={this.props.icon} />
+      </StyledButton>
     );
   }
 }
