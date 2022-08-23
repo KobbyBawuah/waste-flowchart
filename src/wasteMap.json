@@ -9,11 +9,11 @@
           "result": "garbage",
           "icon": "../img/file"
         },
-        "Fruit Waste": {
-          "result": "organic"
-        },
         "Cheese": {
           "result": "garbage"
+        },
+        "Fruit Waste": {
+          "result": "organic"
         },
         "Yogurt": {
           "options": {
@@ -140,7 +140,7 @@
     "Beverages": {
       "options": {
         "Beer": {
-          "options" : {
+          "options": {
             "Can": {
               "result": "recycling"
             },
@@ -150,7 +150,7 @@
           }
         },
         "Coffee": {
-          "options" : {
+          "options": {
             "Iced Coffee": {
               "result": "recycling"
             },
@@ -172,7 +172,7 @@
           }
         },
         "Coconut Water": {
-          "options" : {
+          "options": {
             "Can": {
               "result": "recycling"
             },
@@ -182,7 +182,7 @@
           }
         },
         "Milk/Non-dairy": {
-          "options" : {
+          "options": {
             "Protein Milk": {
               "result": "recycling"
             },
