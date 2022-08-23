@@ -1,6 +1,6 @@
 {
   "options": {
-    "snack-waste": {
+    "Snack Waste": {
       "options": {
         "snack/candy wrapper": {
           "result": "garbage"
@@ -45,7 +45,7 @@
       },
       "icon": "../img/file"
     },
-    "lunch": {
+    "Lunch": {
       "options": {
         "Banh Mi": {
           "options": {
@@ -131,6 +131,65 @@
               "result": "garbage"
             },
             "Lid": {
+              "result": "recycling"
+            }
+          }
+        }
+      }
+    },
+    "Beverages": {
+      "options": {
+        "Beer": {
+          "options" : {
+            "Can": {
+              "result": "recycling"
+            },
+            "Bottle": {
+              "result": "recycling"
+            }
+          }
+        },
+        "Coffee": {
+          "options" : {
+            "Iced Coffee": {
+              "result": "recycling"
+            },
+            "Cold Brew": {
+              "result": "recycling"
+            },
+            "White/Coloured Lid ": {
+              "result": "recycling"
+            },
+            "Black Lid": {
+              "result": "Garbage"
+            },
+            "Cup": {
+              "result": "Garbage"
+            },
+            "Straw": {
+              "result": "Garbage"
+            }
+          }
+        },
+        "Coconut Water": {
+          "options" : {
+            "Can": {
+              "result": "recycling"
+            },
+            "Carton": {
+              "result": "recycling"
+            }
+          }
+        },
+        "Milk/Non-dairy": {
+          "options" : {
+            "Protein Milk": {
+              "result": "recycling"
+            },
+            "Almond/Oat": {
+              "result": "recycling"
+            },
+            "Milk": {
               "result": "recycling"
             }
           }

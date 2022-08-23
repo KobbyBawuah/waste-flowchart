@@ -1,33 +1,19 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { PRIMARY_BUTTON_PURPLE, WHITE } from "../theme/colors";
+import { DISABLED_BUTTON_PURPLE, PRIMARY_BUTTON_PURPLE, WHITE } from "../theme/colors";
 import ResultIcon from "./ResultIcon";
 
-class Button extends React.Component {
-  constructor(props) {
-    // Required step: always call the parent class' constructor
-    super(props);
+function Button({label, icon, onClick, disabled}) {
 
-    // Set the state directly. Use props if necessary.
-    this.state = {
-      label: this.props.label, // 'snack-waste'
-    };
-
-    this.clickHandler = this.clickHandler.bind(this);
+  function clickHandler() {
+    onClick(label);
   }
 
-  clickHandler() {
-    this.props.onClick(this.props.label);
-  }
-
-  render() {
-    let clickHandler = this.clickHandler;
-    return (
-      <StyledButton onClick={clickHandler}>
-        {this.state.label} <ResultIcon icon={this.props.icon} />
-      </StyledButton>
-    );
-  }
+  return (
+    <StyledButton onClick={disabled ? null : clickHandler} disabled={disabled}>
+      {label} <ResultIcon icon={icon} />
+    </StyledButton>
+  );
 }
 
 const StyledButton = styled(`button`)`
@@ -46,7 +32,7 @@ const StyledButton = styled(`button`)`
   font-family: Rubik, Avenir Next, Helvetica Neue, sans-serif;
   font-weight: 600;
 
-  background-color: ${PRIMARY_BUTTON_PURPLE};
+  background-color: ${({disabled}) => disabled ? DISABLED_BUTTON_PURPLE : PRIMARY_BUTTON_PURPLE};
 
   border-radius: 4px;
   border: 1px solid #43384c;

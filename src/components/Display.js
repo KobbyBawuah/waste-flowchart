@@ -72,13 +72,14 @@ function Display({ initialValue }) {
       ) : //false
       null}
 
-      {Object.keys(options).map(function (key, index) {
+      {Object.keys(options).map(function (key) {
         return (
           <Button
             key={key}
             label={key}
             icon={options[key].result}
             onClick={clickHandler(options[key])}
+            disabled={!!options[key].result}
           />
         );
       })}

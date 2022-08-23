@@ -1,4 +1,4 @@
-import { FaTrashAlt, FaRecycle, FaApple } from "react-icons/fa";
+import { FaTrashAlt, FaRecycle, FaLeaf } from "react-icons/fa";
 
 export default function ResultIcon({ icon }) {
   switch (icon) {
@@ -7,7 +7,7 @@ export default function ResultIcon({ icon }) {
     case "recycling":
       return <FaRecycle />;
     case "organic":
-      return <FaApple />;
+      return <FaLeaf />;
     default:
       return null;
   }
