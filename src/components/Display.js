@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { FaArrowAltCircleLeft, FaTimesCircle } from "react-icons/fa";
+import {
+  FaArrowAltCircleLeft,
+  FaTimesCircle,
+  FaTrashAlt,
+  FaRecycle,
+  FaLeaf,
+} from "react-icons/fa";
 import Button from "./Button";
 
 import styled from "@emotion/styled";
@@ -17,7 +23,7 @@ function Display({ initialValue, setTitle, title }) {
       previous: [],
       current: initialValue,
     });
-    setTitle('What kind of waste are you confused about?');
+    setTitle("What kind of waste are you confused about?");
   }
 
   function backButtonHandler() {
@@ -70,17 +76,40 @@ function Display({ initialValue, setTitle, title }) {
       {state.previous.length > 0 ? (
         // true
         <>
-        <BackContainer onClick={backButtonHandler}>
-          <FaArrowAltCircleLeft size={24} />
-          Back
-        </BackContainer>
-        <ResetContainer onClick={resetHandler}>
-          Reset
-          <FaTimesCircle size={24} />
-        </ResetContainer>
+          <BackContainer onClick={backButtonHandler}>
+            <FaArrowAltCircleLeft size={24} />
+            Back
+          </BackContainer>
+          <ResetContainer onClick={resetHandler}>
+            Reset
+            <FaTimesCircle size={24} />
+          </ResetContainer>
         </>
       ) : //false
       null}
+
+      <LegendContainer>
+        <table>
+          <tr>
+            <LegendIconContainer>
+              <FaTrashAlt />
+            </LegendIconContainer>
+            <td>Waste</td>
+          </tr>
+          <tr>
+            <LegendIconContainer>
+              <FaRecycle />
+            </LegendIconContainer>
+            <td>Recycle</td>
+          </tr>
+          <tr>
+            <LegendIconContainer>
+              <FaLeaf />
+            </LegendIconContainer>
+            <td>Compost</td>
+          </tr>
+        </table>
+      </LegendContainer>
 
       {Object.keys(options).map(function (key) {
         return (
@@ -138,5 +167,26 @@ const ResetContainer = styled("div")`
   border-radius: 4px;
   color: ${WHITE};
 `;
+
+const LegendContainer = styled("div")`
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  position: fixed;
+  bottom: 16px;
+  left: 12px;
+  width: min-content;
+
+  margin: 12px;
+  padding: 8px;
+  border-radius: 4px;
+  color: ${WHITE};
+`;
+
+const LegendIconContainer = styled('td')`
+  padding-top: 4px;
+  padding-right: 8px;
+`
 
 export default Display;
