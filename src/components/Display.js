@@ -5,7 +5,7 @@ import Button from "./Button";
 import styled from "@emotion/styled";
 import { WHITE } from "../theme/colors";
 
-function Display({ initialValue }) {
+function Display({ initialValue, setTitle, title }) {
   const [state, setState] = useState({
     previous: [],
     current: initialValue,
@@ -23,17 +23,20 @@ function Display({ initialValue }) {
     // check parent, check parent of parent
 
     let newCurrent = state.previous.pop();
+    const key = Object.keys(newCurrent)[0];
     setState({
       previous: state.previous,
-      current: newCurrent,
+      current: newCurrent[key],
     });
+    setTitle(key);
   }
 
-  const clickHandler = (option) => (label) => {
+  const clickHandler = (option, key) => (label) => {
     setState({
-      previous: [...state.previous, state.current],
+      previous: [...state.previous, { [key]: state.current }],
       current: option,
     });
+    setTitle(label);
   };
 
   function pickIcon() {
@@ -77,8 +80,8 @@ function Display({ initialValue }) {
           <Button
             key={key}
             label={key}
-            icon={options[key].result}
-            onClick={clickHandler(options[key])}
+            result={options[key].result}
+            onClick={clickHandler(options[key], title)}
             disabled={!!options[key].result}
           />
         );

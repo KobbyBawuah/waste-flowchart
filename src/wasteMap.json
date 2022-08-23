@@ -17,11 +17,11 @@
         },
         "Yogurt": {
           "options": {
-            "Yogurt Lid": {
+            "Lid": {
               "result": "garbage",
               "icon": "../img/file"
             },
-            "Yogurt Container": {
+            "Container": {
               "result": "recycling",
               "icon": "../img/file"
             }
