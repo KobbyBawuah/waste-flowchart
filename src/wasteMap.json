@@ -200,26 +200,26 @@
       "options": {
         "Pizza": {
           "options": {
-            "box": {
+            "Box": {
               "result": "organic"
             },
-            "napkin": {
+            "Napkin": {
               "result": "organic"
             }
           }
         },
         "Nachos": {
           "options": {
-            "box": {
+            "Box": {
               "result": "garbage"
             },
-            "sauce containers": {
+            "Sauce containers": {
               "result": "recycling"
             },
-            "parchment paper": {
+            "Parchment Paper": {
               "result": "garbage"
             },
-            "napkin": {
+            "Napkin": {
               "result": "organic"
             }
           }
@@ -232,7 +232,7 @@
             "Napkin": {
               "result": "organic"
             },
-            "sauce containers": {
+            "Sauce Containers": {
               "result": "recycling"
             }
           }
@@ -245,10 +245,10 @@
             "Lid": {
               "result": "recycling"
             },
-            "sauce containers": {
+            "Sauce Containers": {
               "result": "recycling"
             },
-            "napkin": {
+            "Napkin": {
               "result": "organic"
             }
           }
