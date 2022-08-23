@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { FaArrowAltCircleLeft, FaTimesCircle } from "react-icons/fa";
 import Button from "./Button";
 
 import styled from "@emotion/styled";
@@ -17,6 +17,7 @@ function Display({ initialValue, setTitle, title }) {
       previous: [],
       current: initialValue,
     });
+    setTitle('What kind of waste are you confused about?');
   }
 
   function backButtonHandler() {
@@ -68,10 +69,15 @@ function Display({ initialValue, setTitle, title }) {
     <Container className="button-display-container">
       {state.previous.length > 0 ? (
         // true
+        <>
         <BackContainer onClick={backButtonHandler}>
           <FaArrowAltCircleLeft size={24} />
           Back
         </BackContainer>
+        <ResetContainer onClick={resetHandler}>
+          Reset
+        </ResetContainer>
+        </>
       ) : //false
       null}
 
@@ -112,6 +118,24 @@ const BackContainer = styled("div")`
   margin: 12px;
   padding: 8px;
   border-radius: 4px;
+  color: ${WHITE};
+`;
+
+const ResetContainer = styled("div")`
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  position: fixed;
+  bottom: 16px;
+  right: 12px;
+  border: 1px solid ${WHITE};
+  width: min-content;
+
+  margin: 12px;
+  padding: 8px;
+  height: 42px;
+  border-radius: 100%;
   color: ${WHITE};
 `;
 
