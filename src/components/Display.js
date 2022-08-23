@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   FaArrowAltCircleLeft,
   FaTimesCircle,
@@ -11,118 +11,113 @@ import Button from "./Button";
 import styled from "@emotion/styled";
 import { WHITE } from "../theme/colors";
 
-function Display({ initialValue, setTitle, title }) {
+function Display({ initialValue }) {
   const [state, setState] = useState({
     previous: [],
     current: initialValue,
+    title: "What kind of waste are you confused about?",
   });
+
+  const resetTimeoutContainer = useRef(null);
 
   function resetHandler() {
     // set state to INITIAL_STATE
     setState({
       previous: [],
       current: initialValue,
+      title: "What kind of waste are you confused about?",
     });
-    setTitle("What kind of waste are you confused about?");
+    if (resetTimeoutContainer.current) {
+      clearTimeout(resetTimeoutContainer.current);
+      resetTimeoutContainer.current = null;
+    }
+  }
+
+  if (resetTimeoutContainer.current) {
+    clearTimeout(resetTimeoutContainer.current);
+    resetTimeoutContainer.current = null;
+  }
+  if (state.current !== initialValue) {
+    resetTimeoutContainer.current = setTimeout(resetHandler, 30000);
   }
 
   function backButtonHandler() {
-    // check parent, check parent of parent
-
     let newCurrent = state.previous.pop();
     const key = Object.keys(newCurrent)[0];
     setState({
       previous: state.previous,
       current: newCurrent[key],
+      title: key,
     });
-    setTitle(key);
   }
 
-  const clickHandler = (option, key) => (label) => {
+  const clickHandler = (option) => (label) => {
     setState({
-      previous: [...state.previous, { [key]: state.current }],
+      previous: [...state.previous, { [state.title]: state.current }],
       current: option,
+      title: label,
     });
-    setTitle(label);
   };
 
-  function pickIcon() {
-    // const TERMINAL_IMAGE_FILES = {
-    //   recycling: "../img/recycling",
-    //   garbage: "../img/garbage",
-    // };
-
-    return state.current["result"];
-
-    // The goal
-    // const result = this.data[terminalElement]["result"];
-    // return TERMINAL_IMAGE_FILES[result];
-  }
-
-  const { result, options } = state.current;
-  if (result) {
-    // pick icon;
-    return (
-      <Container>
-        <h1>WE DONEZO</h1>
-        {console.log(pickIcon())}
-        <button onClick={resetHandler}>Reset</button>
-      </Container>
-    );
-  }
+  const { options } = state.current;
 
   return (
-    <Container className="button-display-container">
-      {state.previous.length > 0 ? (
-        // true
-        <>
-          <BackContainer onClick={backButtonHandler}>
-            <FaArrowAltCircleLeft size={24} />
-            Back
-          </BackContainer>
-          <ResetContainer onClick={resetHandler}>
-            Reset
-            <FaTimesCircle size={24} />
-          </ResetContainer>
-        </>
-      ) : //false
-      null}
+    <>
+      <Header>{state.title}</Header>
+      <Container className="button-display-container">
+        {state.previous.length > 0 ? (
+          // true
+          <>
+            <BackContainer onClick={backButtonHandler}>
+              <FaArrowAltCircleLeft size={24} />
+              Back
+            </BackContainer>
+            <ResetContainer onClick={resetHandler}>
+              Reset
+              <FaTimesCircle size={24} />
+            </ResetContainer>
+          </>
+        ) : //false
+        null}
 
-      <LegendContainer>
-        <table>
-          <tr>
-            <LegendIconContainer>
-              <FaTrashAlt />
-            </LegendIconContainer>
-            <td>Waste</td>
-          </tr>
-          <tr>
-            <LegendIconContainer>
-              <FaRecycle />
-            </LegendIconContainer>
-            <td>Recycle</td>
-          </tr>
-          <tr>
-            <LegendIconContainer>
-              <FaLeaf />
-            </LegendIconContainer>
-            <td>Compost</td>
-          </tr>
-        </table>
-      </LegendContainer>
+        <LegendContainer>
+          <table>
+            <tbody>
+              <tr>
+                <LegendIconContainer>
+                  <FaTrashAlt />
+                </LegendIconContainer>
+                <td>Waste</td>
+              </tr>
+              <tr>
+                <LegendIconContainer>
+                  <FaRecycle />
+                </LegendIconContainer>
+                <td>Recycle</td>
+              </tr>
+              <tr>
+                <LegendIconContainer>
+                  <FaLeaf />
+                </LegendIconContainer>
+                <td>Compost</td>
+              </tr>
+            </tbody>
+          </table>
+        </LegendContainer>
 
-      {Object.keys(options).map(function (key) {
-        return (
-          <Button
-            key={key}
-            label={key}
-            result={options[key].result}
-            onClick={clickHandler(options[key], title)}
-            disabled={!!options[key].result}
-          />
-        );
-      })}
-    </Container>
+        {Object.keys(options).map(function (key) {
+          return (
+            <Button
+              key={key}
+              label={key}
+              result={options[key].result}
+              onClick={clickHandler(options[key])}
+              disabled={!!options[key].result}
+            />
+          );
+        })}
+      </Container>
+    </>
   );
 }
 
@@ -184,9 +179,17 @@ const LegendContainer = styled("div")`
   color: ${WHITE};
 `;
 
-const LegendIconContainer = styled('td')`
+const LegendIconContainer = styled("td")`
   padding-top: 4px;
   padding-right: 8px;
-`
+`;
+
+const Header = styled("h1")`
+  color: ${WHITE};
+  font-family: Rubik, Avenir Next, Helvetica Neue, sans-serif;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+`;
 
 export default Display;
