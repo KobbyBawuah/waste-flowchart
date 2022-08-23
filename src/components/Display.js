@@ -76,6 +76,7 @@ function Display({ initialValue, setTitle, title }) {
         </BackContainer>
         <ResetContainer onClick={resetHandler}>
           Reset
+          <FaTimesCircle size={24} />
         </ResetContainer>
         </>
       ) : //false
@@ -127,15 +128,14 @@ const ResetContainer = styled("div")`
   align-items: center;
 
   position: fixed;
-  bottom: 16px;
+  top: 16px;
   right: 12px;
   border: 1px solid ${WHITE};
   width: min-content;
 
   margin: 12px;
   padding: 8px;
-  height: 42px;
-  border-radius: 100%;
+  border-radius: 4px;
   color: ${WHITE};
 `;
 
