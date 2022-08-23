@@ -1,17 +1,29 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { DISABLED_BUTTON_PURPLE, PRIMARY_BUTTON_PURPLE, WHITE } from "../theme/colors";
+import { COMPOST, DISABLED_BUTTON_PURPLE, PRIMARY_BUTTON_PURPLE, RECYCLING, WASTE, WHITE } from "../theme/colors";
 import ResultIcon from "./ResultIcon";
 
-function Button({label, icon, onClick, disabled}) {
+function mapResultToColor(result) {
+  switch (result) {
+    case "garbage":
+      return WASTE;
+    case "recycling":
+      return RECYCLING;
+    case "organic":
+      return COMPOST
+    default:
+      return undefined;
+  }
+}
 
+function Button({label, result, onClick, disabled}) {
   function clickHandler() {
     onClick(label);
   }
 
   return (
-    <StyledButton onClick={disabled ? null : clickHandler} disabled={disabled}>
-      {label} <ResultIcon icon={icon} />
+    <StyledButton onClick={disabled ? null : clickHandler} disabled={disabled} color={mapResultToColor(result)}>
+      {label} <ResultIcon icon={result} />
     </StyledButton>
   );
 }
@@ -32,7 +44,7 @@ const StyledButton = styled(`button`)`
   font-family: Rubik, Avenir Next, Helvetica Neue, sans-serif;
   font-weight: 600;
 
-  background-color: ${({disabled}) => disabled ? DISABLED_BUTTON_PURPLE : PRIMARY_BUTTON_PURPLE};
+  background-color: ${({disabled, color}) => disabled ? DISABLED_BUTTON_PURPLE : PRIMARY_BUTTON_PURPLE};
 
   border-radius: 4px;
   border: 1px solid #43384c;

@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import {useState} from "react";
 import Display from "./components/Display";
 import WASTE_MAP from "./wasteMap.json";
 import { WHITE } from "./theme/colors";
@@ -7,10 +7,12 @@ import { WHITE } from "./theme/colors";
 import styled from "@emotion/styled";
 
 function App() {
+  const [state, setState] = useState('What kind of waste are you confused about?');
+
   return (
     <>
-      <Header>What kind of waste are you confused about?</Header>
-      <Display initialValue={WASTE_MAP} />
+      <Header>{state}</Header>
+      <Display initialValue={WASTE_MAP} setTitle={setState} title={state}/>
     </>
   );
 }
