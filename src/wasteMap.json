@@ -2,20 +2,20 @@
   "options": {
     "Snack Waste": {
       "options": {
-        "snack/candy wrapper": {
+        "Snack/Candy wrapper": {
           "result": "garbage"
         },
-        "chip bag": {
+        "Chip Bag": {
           "result": "garbage",
           "icon": "../img/file"
         },
-        "fruit waste": {
+        "Fruit Waste": {
           "result": "organic"
         },
-        "cheese": {
+        "Cheese": {
           "result": "garbage"
         },
-        "yogurt": {
+        "Yogurt": {
           "options": {
             "Yogurt Lid": {
               "result": "garbage",
@@ -28,15 +28,15 @@
           },
           "icon": "../img/file"
         },
-        "hummus": {
+        "Hummus": {
           "options": {
-            "hummus box": {
+            "Hummus Box": {
               "result": "recycling"
             },
-            "hummus container": {
+            "Hummus Container": {
               "result": "recycling"
             },
-            "plastic wrappers": {
+            "Plastic Wrappers": {
               "result": "garbage"
             }
           },
