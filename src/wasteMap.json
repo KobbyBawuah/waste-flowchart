@@ -17,11 +17,11 @@
         },
         "yogurt": {
           "options": {
-            "yogurt-lid": {
+            "Yogurt Lid": {
               "result": "garbage",
               "icon": "../img/file"
             },
-            "yogurt-container": {
+            "Yogurt Container": {
               "result": "recycling",
               "icon": "../img/file"
             }
@@ -161,13 +161,13 @@
               "result": "recycling"
             },
             "Black Lid": {
-              "result": "Garbage"
+              "result": "garbage"
             },
             "Cup": {
-              "result": "Garbage"
+              "result": "garbage"
             },
             "Straw": {
-              "result": "Garbage"
+              "result": "garbage"
             }
           }
         },
@@ -196,7 +196,7 @@
         }
       }
     },
-    "Happy-Hour": {
+    "Happy Hour": {
       "options": {
         "Pizza": {
           "options": {
