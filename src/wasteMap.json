@@ -65,7 +65,10 @@
             "Lid": {
               "result": "recycling"
             },
-            "Container/napkins": {
+            "Container": {
+              "result": "organic"
+            },
+            "Napkins": {
               "result": "organic"
             }
           }
@@ -114,7 +117,10 @@
         },
         "Tacos 🌮": {
           "options": {
-            "Cardboard clamshell and napkins": {
+            "Cardboard clamshell container": {
+              "result": "organic"
+            },
+            "Napkins": {
               "result": "organic"
             },
             "Hot sauce container": {

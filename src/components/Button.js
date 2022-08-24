@@ -60,6 +60,8 @@ const StyledButton = styled(`button`)`
 
   border-radius: 4px;
   border: 1px solid #43384c;
+
+  text-transform: capitalize;
 `;
 
 export default Button;
