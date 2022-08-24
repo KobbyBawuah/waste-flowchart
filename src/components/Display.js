@@ -10,12 +10,14 @@ import Button from "./Button";
 
 import styled from "@emotion/styled";
 import { WHITE } from "../theme/colors";
+import { EditDisplay } from "./EditDisplay";
 
-function Display({ initialValue }) {
+function Display({ initialValue, onSaveHandler }) {
   const [state, setState] = useState({
     previous: [],
     current: initialValue,
     title: "What kind of waste are you confused about?",
+    editMode: false,
   });
 
   const resetTimeoutContainer = useRef(null);
@@ -63,59 +65,81 @@ function Display({ initialValue }) {
 
   return (
     <>
-      <Header>{state.title}</Header>
-      <Container className="button-display-container">
-        {state.previous.length > 0 ? (
-          // true
-          <>
-            <BackContainer onClick={backButtonHandler}>
-              <FaArrowAltCircleLeft size={24} />
-              Back
-            </BackContainer>
-            <ResetContainer onClick={resetHandler}>
-              Reset
-              <FaTimesCircle size={24} />
-            </ResetContainer>
-          </>
-        ) : //false
-        null}
+      {" "}
+      {!state.editMode ? (
+        <>
+          <Header>{state.title}</Header>
+          <Container className="button-display-container">
+            {state.previous.length > 0 ? (
+              // true
+              <>
+                <BackContainer onClick={backButtonHandler}>
+                  <FaArrowAltCircleLeft size={24} />
+                  Back
+                </BackContainer>
+                <ResetContainer onClick={resetHandler}>
+                  Reset
+                  <FaTimesCircle size={24} />
+                </ResetContainer>
+              </>
+            ) : //false
+            null}
 
-        <LegendContainer>
-          <LegendTable>
-            <tbody>
-              <tr>
-                <td>
-                  <LegendIconContainer>
-                    <FaTrashAlt /> Garbage
-                  </LegendIconContainer>
-                </td>
-                <td>
-                  <LegendIconContainer>
-                    <FaRecycle /> Recycle
-                  </LegendIconContainer>
-                </td>
-                <td>
-                  <LegendIconContainer>
-                    <FaLeaf /> Compost
-                  </LegendIconContainer>
-                </td>
-              </tr>
-            </tbody>
-          </LegendTable>
-        </LegendContainer>
+            <LegendContainer>
+              <LegendTable>
+                <tbody>
+                  <tr>
+                    <td>
+                      <LegendIconContainer>
+                        <FaTrashAlt /> Garbage
+                      </LegendIconContainer>
+                    </td>
+                    <td>
+                      <LegendIconContainer>
+                        <FaRecycle /> Recycle
+                      </LegendIconContainer>
+                    </td>
+                    <td>
+                      <LegendIconContainer>
+                        <FaLeaf /> Compost
+                      </LegendIconContainer>
+                    </td>
+                  </tr>
+                </tbody>
+              </LegendTable>
+            </LegendContainer>
 
-        {Object.keys(options).map(function (key) {
-          return (
-            <Button
-              key={key}
-              label={key}
-              result={options[key].result}
-              onClick={clickHandler(options[key])}
-              disabled={!!options[key].result}
-            />
-          );
-        })}
-      </Container>
+            {Object.keys(options).map(function (key) {
+              return (
+                <Button
+                  key={key}
+                  label={key}
+                  result={options[key].result}
+                  onClick={clickHandler(options[key])}
+                  disabled={!!options[key].result}
+                />
+              );
+            })}
+          </Container>
+          <EditContainer>
+            <EditButton
+              onClick={() => {
+                setState({ ...state, editMode: true });
+              }}
+            >
+              Edit
+            </EditButton>
+          </EditContainer>
+        </>
+      ) : (
+        <>
+          <Header>Edit</Header>
+          <EditDisplay
+            data={initialValue}
+            onSaveHander={onSaveHandler}
+          />
+        </>
+      )}
     </>
   );
 }
@@ -192,6 +216,17 @@ const Header = styled("h1")`
   font-weight: 600;
   display: flex;
   justify-content: center;
+`;
+
+const EditContainer = styled("div")`
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+`;
+const EditButton = styled("button")`
+  height: 100px;
+  width: 100px;
+  opacity: 0;
 `;
 
 export default Display;
