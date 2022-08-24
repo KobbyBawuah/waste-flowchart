@@ -9,7 +9,7 @@ import {
 import Button from "./Button";
 
 import styled from "@emotion/styled";
-import { WHITE } from "../theme/colors";
+import { BACKGROUND, WHITE } from "../theme/colors";
 
 function Display({ initialValue }) {
   const [state, setState] = useState({
@@ -126,6 +126,7 @@ const Container = styled("div")`
   flex-wrap: wrap;
   justify-content: center;
   padding: 12px;
+  padding-bottom: 80px;
 `;
 
 const BackContainer = styled("div")`
@@ -169,11 +170,12 @@ const LegendContainer = styled("div")`
   align-items: center;
 
   position: fixed;
-  bottom: 16px;
-  left: 12px;
+  bottom: 0px;
+  left: 0px;
 
-  margin: 20px;
+  padding: 20px;
   color: ${WHITE};
+  background-color: ${BACKGROUND};
 `;
 
 const LegendIconContainer = styled("div")`
@@ -192,6 +194,15 @@ const Header = styled("h1")`
   font-weight: 600;
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+
+  height: 100px;
+  margin: 0;
+  padding: 0 20px;
+  background-color: ${BACKGROUND};
 `;
 
 export default Display;
