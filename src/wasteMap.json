@@ -2,54 +2,48 @@
   "options": {
     "Snacks 🍬": {
       "options": {
-        "Snack/Candy wrapper": {
+        "Snack/Candy wrapper 🍬": {
           "result": "garbage"
         },
-        "Chip Bag": {
-          "result": "garbage",
-          "icon": "../img/file"
-        },
-        "Cheese Wrapper": {
+        "Chip Bag ": {
           "result": "garbage"
         },
-        "Fruit Waste": {
+        "Cheese Wrapper 🧀": {
+          "result": "garbage"
+        },
+        "Fruit Waste 🍎": {
           "result": "organic"
         },
         "Yogurt": {
           "options": {
             "Lid": {
-              "result": "garbage",
-              "icon": "../img/file"
+              "result": "garbage"
             },
             "Container": {
-              "result": "recycling",
-              "icon": "../img/file"
+              "result": "recycling"
             }
-          },
-          "icon": "../img/file"
+          }
         },
         "Hummus": {
           "options": {
+            "Plastic Wrappers": {
+              "result": "garbage"
+            },
             "Hummus Box": {
               "result": "recycling"
             },
             "Hummus Container": {
               "result": "recycling"
-            },
-            "Plastic Wrappers": {
-              "result": "garbage"
             }
-          },
-          "icon": "../img/file"
+          }
         }
-      },
-      "icon": "../img/file"
+      }
     },
     "Lunch 🍛": {
       "options": {
         "Banh Mi": {
           "options": {
-            "Paper bag": {
+            "Paper bag ": {
               "result": "organic"
             },
             "Napkin": {
@@ -63,20 +57,20 @@
             }
           }
         },
-        "Poke": {
+        "Poke 🥗": {
           "options": {
-            "Container/napkins": {
-              "result": "organic"
+            "Wooden chopsticks": {
+              "result": "garbage"
             },
             "Lid": {
               "result": "recycling"
             },
-            "Wooden chopsticks": {
-              "result": "garbage"
+            "Container/napkins": {
+              "result": "organic"
             }
           }
         },
-        "Rice Bowls": {
+        "Rice Bowls 🍚": {
           "options": {
             "Black bowl": {
               "result": "garbage"
@@ -105,7 +99,7 @@
             }
           }
         },
-        "Salad": {
+        "Salad 🥗": {
           "options": {
             "Cardboard bowl": {
               "result": "garbage"
@@ -154,15 +148,6 @@
         },
         "Coffee ☕️": {
           "options": {
-            "Iced Coffee": {
-              "result": "recycling"
-            },
-            "Cold Brew": {
-              "result": "recycling"
-            },
-            "White/Coloured Lid ": {
-              "result": "recycling"
-            },
             "Black Lid": {
               "result": "garbage"
             },
@@ -171,6 +156,15 @@
             },
             "Straw": {
               "result": "garbage"
+            },
+            "Iced Coffee": {
+              "result": "recycling"
+            },
+            "Cold Brew": {
+              "result": "recycling"
+            },
+            "White/Coloured Lid": {
+              "result": "recycling"
             }
           }
         },
@@ -201,7 +195,7 @@
     },
     "Happy Hour 🍻": {
       "options": {
-        "Pizza": {
+        "Pizza 🍕": {
           "options": {
             "Box": {
               "result": "organic"
@@ -213,21 +207,21 @@
         },
         "Nachos": {
           "options": {
-            "Box": {
+            "Box 📦": {
               "result": "garbage"
             },
-            "Sauce containers": {
+            "Parchment Paper ": {
+              "result": "garbage"
+            },
+            "Sauce containers ": {
               "result": "recycling"
-            },
-            "Parchment Paper": {
-              "result": "garbage"
             },
             "Napkin": {
               "result": "organic"
             }
           }
         },
-        "Fried chicken": {
+        "Fried chicken 🐓": {
           "options": {
             "Box": {
               "result": "organic"
@@ -240,7 +234,7 @@
             }
           }
         },
-        "Poutine": {
+        "Poutine 🍟": {
           "options": {
             "Black plastic": {
               "result": "garbage"
