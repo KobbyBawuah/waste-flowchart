@@ -1,6 +1,6 @@
 {
   "options": {
-    "Snacks": {
+    "Snacks 🍬": {
       "options": {
         "Snack/Candy wrapper": {
           "result": "garbage"
@@ -9,7 +9,7 @@
           "result": "garbage",
           "icon": "../img/file"
         },
-        "Cheese": {
+        "Cheese Wrapper": {
           "result": "garbage"
         },
         "Fruit Waste": {
@@ -45,11 +45,14 @@
       },
       "icon": "../img/file"
     },
-    "Lunch": {
+    "Lunch 🍛": {
       "options": {
         "Banh Mi": {
           "options": {
-            "Paper bag/napkin": {
+            "Paper bag": {
+              "result": "organic"
+            },
+            "Napkin": {
               "result": "organic"
             },
             "Parchment paper": {
@@ -104,18 +107,18 @@
         },
         "Salad": {
           "options": {
-            "Plastic lid": {
+            "Cardboard bowl": {
               "result": "garbage"
             },
-            "Dressing cup": {
+            "Plastic lid": {
               "result": "recycling"
             },
-            "Cardboard bowl": {
+            "Dressing cup": {
               "result": "recycling"
             }
           }
         },
-        "Tacos": {
+        "Tacos 🌮": {
           "options": {
             "Cardboard clamshell and napkins": {
               "result": "organic"
@@ -125,7 +128,7 @@
             }
           }
         },
-        "Thai": {
+        "Thai 🇹🇭": {
           "options": {
             "Black plastic": {
               "result": "garbage"
@@ -137,9 +140,9 @@
         }
       }
     },
-    "Beverages": {
+    "Beverages 🥤": {
       "options": {
-        "Beer": {
+        "Beer 🍺": {
           "options": {
             "Can": {
               "result": "recycling"
@@ -149,7 +152,7 @@
             }
           }
         },
-        "Coffee": {
+        "Coffee ☕️": {
           "options": {
             "Iced Coffee": {
               "result": "recycling"
@@ -171,7 +174,7 @@
             }
           }
         },
-        "Coconut Water": {
+        "Coconut Water 🥥": {
           "options": {
             "Can": {
               "result": "recycling"
@@ -181,7 +184,7 @@
             }
           }
         },
-        "Milk/Non-dairy": {
+        "Milk/Non-dairy 🥛": {
           "options": {
             "Protein Milk": {
               "result": "recycling"
@@ -196,7 +199,7 @@
         }
       }
     },
-    "Happy Hour": {
+    "Happy Hour 🍻": {
       "options": {
         "Pizza": {
           "options": {

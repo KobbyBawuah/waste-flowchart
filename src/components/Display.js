@@ -81,28 +81,27 @@ function Display({ initialValue }) {
         null}
 
         <LegendContainer>
-          <table>
+          <LegendTable>
             <tbody>
               <tr>
-                <LegendIconContainer>
-                  <FaTrashAlt />
-                </LegendIconContainer>
-                <td>Waste</td>
-              </tr>
-              <tr>
-                <LegendIconContainer>
-                  <FaRecycle />
-                </LegendIconContainer>
-                <td>Recycle</td>
-              </tr>
-              <tr>
-                <LegendIconContainer>
-                  <FaLeaf />
-                </LegendIconContainer>
-                <td>Compost</td>
+                <td>
+                  <LegendIconContainer>
+                    <FaTrashAlt /> Garbage
+                  </LegendIconContainer>
+                </td>
+                <td>
+                  <LegendIconContainer>
+                    <FaRecycle /> Recycle
+                  </LegendIconContainer>
+                </td>
+                <td>
+                  <LegendIconContainer>
+                    <FaLeaf /> Compost
+                  </LegendIconContainer>
+                </td>
               </tr>
             </tbody>
-          </table>
+          </LegendTable>
         </LegendContainer>
 
         {Object.keys(options).map(function (key) {
@@ -165,23 +164,26 @@ const ResetContainer = styled("div")`
 
 const LegendContainer = styled("div")`
   display: flex;
+  width: 100%;
   gap: 12px;
   align-items: center;
 
   position: fixed;
   bottom: 16px;
   left: 12px;
-  width: min-content;
 
-  margin: 12px;
-  padding: 8px;
-  border-radius: 4px;
+  margin: 20px;
   color: ${WHITE};
 `;
 
-const LegendIconContainer = styled("td")`
+const LegendIconContainer = styled("div")`
   padding-top: 4px;
   padding-right: 8px;
+`;
+
+const LegendTable = styled("table")`
+  text-align: center;
+  width: 100%;
 `;
 
 const Header = styled("h1")`
