@@ -16,7 +16,7 @@ function Display({ initialValue, onSaveHandler }) {
   const [state, setState] = useState({
     previous: [],
     current: initialValue,
-    title: "What kind of waste are you confused about?",
+    title: "Select a category",
     editMode: false,
   });
 
@@ -27,7 +27,7 @@ function Display({ initialValue, onSaveHandler }) {
     setState({
       previous: [],
       current: initialValue,
-      title: "What kind of waste are you confused about?",
+      title: "Select a category",
     });
     if (resetTimeoutContainer.current) {
       clearTimeout(resetTimeoutContainer.current);
