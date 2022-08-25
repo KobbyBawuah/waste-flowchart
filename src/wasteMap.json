@@ -5,7 +5,7 @@
         "Snack/Candy wrapper 🍬": {
           "result": "garbage"
         },
-        "Chip Bag ": {
+        "Chip Bag": {
           "result": "garbage"
         },
         "Cheese Wrapper 🧀": {
@@ -117,7 +117,7 @@
         },
         "Tacos 🌮": {
           "options": {
-            "Cardboard clamshell container": {
+            "Cardboard container": {
               "result": "organic"
             },
             "Napkins": {
