@@ -15,8 +15,8 @@ function mapResult(result) {
       return "garbage/waste";
     case "recycling":
       return "recycling";
-    case "compost/organic waste":
-      return COMPOST;
+    case "organic":
+      return "compost/organic waste";
     default:
       return undefined;
   }
