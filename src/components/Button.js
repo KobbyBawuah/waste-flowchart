@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 import {
-  COMPOST,
   DISABLED_BUTTON_PURPLE,
   PRIMARY_BUTTON_PURPLE,
   WHITE,
 } from "../theme/colors";
 import { toast } from "react-toastify";
 import ResultIcon from "./ResultIcon";
+import confetti from "canvas-confetti";
 
 function mapResult(result) {
   switch (result) {
@@ -31,8 +31,18 @@ function Button({ label, result, onClick, disabled }) {
     <StyledButton
       onClick={
         disabled
-          ? () => {
-              toast.info(`${label} belongs in ${mapResult(result)}!`, { position: "bottom-right" });
+          ? (e) => {
+              toast.info(`${label} belongs in ${mapResult(result)}!`, {
+                position: "bottom-right",
+              });
+              confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: {
+                  x: e.clientX / document.documentElement.clientWidth,
+                  y: e.clientY / document.documentElement.clientHeight,
+                },
+              });
             }
           : clickHandler
       }
