@@ -5,7 +5,6 @@ import {
   FaTrashAlt,
   FaRecycle,
   FaLeaf,
-  FaHeadphones,
 } from "react-icons/fa";
 import Button from "./Button";
 
@@ -135,10 +134,7 @@ function Display({ initialValue, onSaveHandler }) {
       ) : (
         <>
           <Header>Edit</Header>
-          <EditDisplay
-            data={initialValue}
-            onSaveHander={onSaveHandler}
-          />
+          <EditDisplay data={initialValue} onSaveHander={onSaveHandler} />
         </>
       )}
     </>
