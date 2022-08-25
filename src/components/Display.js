@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import Button from "./Button";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 import styled from "@emotion/styled";
 import { BACKGROUND, WHITE } from "../theme/colors";
@@ -210,6 +210,10 @@ const LegendIconContainer = styled("div")`
 const LegendTable = styled("table")`
   text-align: center;
   width: 100%;
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 35px;
+  }
 `;
 
 const Header = styled("h1")`
