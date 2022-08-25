@@ -148,6 +148,7 @@ const Container = styled("div")`
   justify-content: center;
   padding: 12px;
   padding-bottom: 80px;
+  overflow-y: auto;
 `;
 
 const BackContainer = styled("div")`
