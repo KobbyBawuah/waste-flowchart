@@ -2,20 +2,35 @@ import { useState } from "react";
 import styled from "@emotion/styled";
 
 export function EditDisplay({ data, onSaveHandler }) {
-    const [state, setState] = useState(JSON.stringify(data, undefined, 4));
+  const [state, setState] = useState(JSON.stringify(data, undefined, 4));
   return (
     <Container>
-      <StyledTextArea onChange={(event) => setState(event.target.value)}>{state}</StyledTextArea>
-      <SaveButton onClick={() => {
+      <StyledTextArea
+        onChange={(event) => setState(event.target.value)}
+        autoFocus
+      >
+        {state}
+      </StyledTextArea>
+      <SaveButton
+        onClick={() => {
           try {
             const json = JSON.parse(state);
-            window.localStorage.setItem('wasteMap', state)
+            window.localStorage.setItem("wasteMap", state);
             onSaveHandler(json);
           } catch (_) {
             return false;
           }
-      }}>Save</SaveButton>
-      <button onClick={() => {window.location.reload()}}>Back</button>
+        }}
+      >
+        Save
+      </SaveButton>
+      <button
+        onClick={() => {
+          window.location.reload();
+        }}
+      >
+        Back
+      </button>
     </Container>
   );
 }
@@ -30,5 +45,4 @@ const StyledTextArea = styled("textarea")`
   padding: 12px;
 `;
 
-const SaveButton = styled("button")`
-`
+const SaveButton = styled("button")``;
