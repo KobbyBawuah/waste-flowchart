@@ -4,19 +4,18 @@ import {
   COMPOST,
   DISABLED_BUTTON_PURPLE,
   PRIMARY_BUTTON_PURPLE,
-  RECYCLING,
-  WASTE,
   WHITE,
 } from "../theme/colors";
+import { toast } from "react-toastify";
 import ResultIcon from "./ResultIcon";
 
-function mapResultToColor(result) {
+function mapResult(result) {
   switch (result) {
     case "garbage":
-      return WASTE;
+      return "garbage/waste";
     case "recycling":
-      return RECYCLING;
-    case "organic":
+      return "recycling";
+    case "compost/organic waste":
       return COMPOST;
     default:
       return undefined;
@@ -30,9 +29,14 @@ function Button({ label, result, onClick, disabled }) {
 
   return (
     <StyledButton
-      onClick={disabled ? null : clickHandler}
-      disabled={disabled}
-      color={mapResultToColor(result)}
+      onClick={
+        disabled
+          ? () => {
+              toast.info(`${label} belongs in ${mapResult(result)}!`, { position: "bottom-right" });
+            }
+          : clickHandler
+      }
+      color={disabled}
     >
       {label} <ResultIcon icon={result} />
     </StyledButton>
@@ -55,8 +59,8 @@ const StyledButton = styled(`button`)`
   font-family: Rubik, Avenir Next, Helvetica Neue, sans-serif;
   font-weight: 600;
 
-  background-color: ${({ disabled, color }) =>
-    disabled ? DISABLED_BUTTON_PURPLE : PRIMARY_BUTTON_PURPLE};
+  background-color: ${({ color }) =>
+    color ? DISABLED_BUTTON_PURPLE : PRIMARY_BUTTON_PURPLE};
 
   border-radius: 4px;
   border: 1px solid #43384c;

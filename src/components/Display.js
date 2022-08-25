@@ -7,6 +7,8 @@ import {
   FaLeaf,
 } from "react-icons/fa";
 import Button from "./Button";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import styled from "@emotion/styled";
 import { BACKGROUND, WHITE } from "../theme/colors";
@@ -121,6 +123,7 @@ function Display({ initialValue, onSaveHandler }) {
               );
             })}
           </Container>
+          <ToastContainer />
           <EditContainer>
             <EditButton
               onClick={() => {
