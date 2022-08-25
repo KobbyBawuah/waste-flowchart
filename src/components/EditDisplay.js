@@ -6,7 +6,7 @@ export function EditDisplay({ data, onSaveHandler }) {
   return (
     <Container>
       <StyledTextArea onChange={(event) => setState(event.target.value)}>{state}</StyledTextArea>
-      <SaveButton onClick={() => {
+      <button onClick={() => {
           try {
             const json = JSON.parse(state);
             window.localStorage.setItem('wasteMap', state)
@@ -14,8 +14,16 @@ export function EditDisplay({ data, onSaveHandler }) {
           } catch (_) {
             return false;
           }
-      }}>Save</SaveButton>
+      }}>Save</button>
       <button onClick={() => {window.location.reload()}}>Back</button>
+      <button onClick={() => {
+        // eslint-disable-next-line no-restricted-globals
+        const result = confirm('Are you sure you want to reset app data?');
+        if (result) {
+          window.localStorage.removeItem('wasteMap');
+          window.location.reload();
+        }
+      }}>Reset</button>
     </Container>
   );
 }
@@ -29,6 +37,3 @@ const StyledTextArea = styled("textarea")`
   height: 100%;
   padding: 12px;
 `;
-
-const SaveButton = styled("button")`
-`
